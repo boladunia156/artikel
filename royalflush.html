@@ -429,6 +429,104 @@
             border-radius: 6px;
             border: 1px solid rgba(124, 77, 255, 0.3);
         }
+        
+        /* Revolutionary Testimonial Cards */
+        .testimonial-cards {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 20px;
+            margin: 25px 0;
+        }
+        .testimonial-card {
+            background: linear-gradient(135deg, #2a1440 0%, #3d2657 50%, #2a1440 100%);
+            border-radius: 15px;
+            padding: 25px;
+            border: 2px solid rgba(124, 77, 255, 0.4);
+            position: relative;
+            overflow: hidden;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+            will-change: transform, box-shadow;
+        }
+        .testimonial-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(124, 77, 255, 0.3);
+        }
+        .testimonial-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, #7c4dff, #b39ddb, #7c4dff);
+        }
+        .testimonial-header {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 15px;
+        }
+        .testimonial-avatar {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #7c4dff, #b39ddb);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 18px;
+            font-weight: 700;
+            color: #fff;
+            border: 2px solid rgba(179, 157, 219, 0.5);
+        }
+        .testimonial-info {
+            flex: 1;
+        }
+        .testimonial-name {
+            color: #b39ddb;
+            font-weight: 600;
+            margin: 0 0 3px 0;
+            font-size: 16px;
+        }
+        .testimonial-role {
+            color: #d1c4e9;
+            font-size: 13px;
+            margin: 0;
+            opacity: 0.8;
+        }
+        .testimonial-content {
+            color: #e8e8e8;
+            line-height: 1.6;
+            font-size: 15px;
+            margin: 0;
+            position: relative;
+        }
+        .testimonial-content::before {
+            content: '"';
+            font-size: 30px;
+            color: #7c4dff;
+            position: absolute;
+            left: -10px;
+            top: -5px;
+            font-family: serif;
+        }
+        .testimonial-rating {
+            display: flex;
+            gap: 3px;
+            margin-top: 15px;
+        }
+        .star {
+            color: #ffd700;
+            font-size: 16px;
+        }
+        
+        /* Tablet view for testimonials */
+        @media (min-width: 768px) {
+            .testimonial-cards {
+                grid-template-columns: 1fr 1fr;
+                gap: 25px;
+            }
+        }
         .secondary-link {
             color: #b39ddb; 
             text-decoration: none;
@@ -570,6 +668,9 @@
             margin-bottom: 8px;
             border-radius: 10px;
             transition: all 0.3s ease;
+            object-fit: contain !important;
+            background: rgba(124, 77, 255, 0.1);
+            padding: 2px;
         }
         .fixed-footer a:hover amp-img {
             transform: scale(1.1);
@@ -583,13 +684,14 @@
             100% { transform: scale(1) rotate(0); box-shadow: 0 0 15px rgba(124, 77, 255, 0.4); } 
         }
         
-        /* FAQ Accordion Styles */
+        /* FAQ Accordion Styles - Optimized for Performance */
         .faq-accordion {
             background: linear-gradient(135deg, #2a1440, #1e0a2e);
             border-radius: 10px;
             overflow: hidden;
             margin: 20px 0;
             border: 2px solid #7c4dff;
+            will-change: transform;
         }
         .faq-item {
             border-bottom: 1px solid rgba(124, 77, 255, 0.3);
@@ -610,7 +712,8 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            transition: all 0.3s ease;
+            transition: background-color 0.2s ease, color 0.2s ease;
+            will-change: background-color, color;
         }
         .faq-question:hover {
             background: linear-gradient(90deg, #5e4077, #3d2657);
@@ -623,7 +726,8 @@
         .faq-toggle {
             font-size: 20px;
             font-weight: bold;
-            transition: transform 0.3s ease;
+            transition: transform 0.2s ease;
+            will-change: transform;
         }
         .faq-question.active .faq-toggle {
             transform: rotate(45deg);
@@ -633,10 +737,11 @@
             max-height: 0;
             overflow: hidden;
             background: rgba(42, 20, 64, 0.6);
-            transition: max-height 0.3s ease, padding 0.3s ease;
+            transition: max-height 0.2s ease, padding 0.2s ease;
+            will-change: max-height, padding;
         }
         .faq-answer.active {
-            max-height: 200px;
+            max-height: 150px;
             padding: 20px;
         }
         .faq-answer p {
@@ -719,7 +824,7 @@
             
             .fixed-footer { position: relative; padding: 25px; }
             .fixed-footer a { font-size: 16px; }
-            .fixed-footer amp-img { width: 70px !important; height: 70px !important; }
+            .fixed-footer amp-img { width: 70px !important; height: 70px !important; object-fit: contain !important; }
             
             .trust-grid { grid-template-columns: 1fr 1fr; }
             .contact-grid { grid-template-columns: 1fr 1fr; }
@@ -735,7 +840,7 @@
             .contact-list li a i { width: 60px; height: 60px; }
             .site-description h1 { font-size: 42px; }
             .site-description h2 { font-size: 36px; }
-            .fixed-footer amp-img { width: 90px !important; height: 90px !important; }
+            .fixed-footer amp-img { width: 90px !important; height: 90px !important; object-fit: contain !important; }
             
             .logo-container { 
                 padding: 45px 70px;
@@ -983,41 +1088,48 @@
         </ul>
         
         <div class="container">
-            <section class="content">
-                <table>
-                    <tbody>
-                        <tr>
-                            <th colspan="2">Informasi Situs BT2New</th>
-                        </tr>
-                        <tr>
-                            <td>Nama Situs</td>
-                            <td><strong>BT2NEW - Situs Bolatangkas Online Terpercaya</strong></td>
-                        </tr>
-                        <tr>
-                            <td>Minimal Deposit</td>
-                            <td>Rp 50.000 (Via Bank & E-Wallet)</td>
-                        </tr>
-                        <tr>
-                            <td>Game Populer</td>
-                            <td>Bolatangkas dengan Multiple Lucky Tables</td>
-                        </tr>
-                        <tr>
-                            <td>Proses Withdraw</td>
-                            <td>± 1 Menit (Rekor Tercepat di BT2New)</td>
-                        </tr>
-                        <tr>
-                            <td>Range Taruhan</td>
-                            <td>Rp 1.000 - Rp 25.000 per bet</td>
-                        </tr>
-                    </tbody>
-                </table>
-            </section>
+            
+            
+                            <h2>Keunggulan BT2New</h2>
+                            <p>Sebagai platform bolatangkas online terpercaya, <strong>BT2New</strong> menghadirkan pengalaman bermain <a href="#" class="secondary-link">Bolatangkas</a> dengan fitur-fitur unggulan:</p>
+                            
+                            <ul class="feature-list">
+                                <li class="feature-item"><strong><a href="#" class="secondary-link">🎯 RTP Tinggi 98.5%</a></strong> - Peluang menang terbesar dengan transparansi penuh</li>
+                                <li class="feature-item"><strong><a href="#" class="secondary-link">🎰 Lucky Table System</a></strong> - Pilih dan ganti meja keberuntungan Anda sendiri</li>
+                                <li class="feature-item"><strong><a href="#" class="secondary-link">💰 Range Taruhan Fleksibel</a></strong> - Rp 1.000 - Rp 25.000 per hand</li>
+                                <li class="feature-item"><strong><a href="#" class="secondary-link">⚡ Proses Super Cepat</a></strong> - Deposit & withdraw hanya 1 menit tanpa potongan</li>
+                                <li class="feature-item"><strong><a href="#" class="secondary-link">📱 Multi Platform</a></strong> - Desktop, mobile browser & aplikasi iOS/Android</li>
+                                <li class="feature-item"><strong><a href="#" class="secondary-link">�️ Lisensi Resmi PAGCOR</a></strong> - Beroperasi legal dengan jaminan keamanan SSL 256-bit</li>
+                            </ul>
+                            
+                            <div class="trust-indicators">
+                                <h3 style="color: #28a745; margin: 0 0 15px 0;">🛡️ Jaminan Keamanan & Kepercayaan</h3>
+                                <div class="trust-grid">
+                                    <div class="trust-item">
+                                        <div class="trust-icon">✓</div>
+                                        <span><strong>Lisensi Gaming Resmi</strong> - Beroperasi sejak 2004</span>
+                                    </div>
+                                    <div class="trust-item">
+                                        <div class="trust-icon">🔒</div>
+                                        <span><strong>SSL 256-bit Encryption</strong> - Data terlindungi penuh</span>
+                                    </div>
+                                    <div class="trust-item">
+                                        <div class="trust-icon">🏆</div>
+                                        <span><strong>Best Bolatangkas Site 2025</strong> - Situs tangkas terbaik</span>
+                                    </div>
+                                    <div class="trust-item">
+                                        <div class="trust-icon">💰</div>
+                                        <span><strong>RTP Diaudit Independen</strong> - Transparansi 100%</span>
+                                    </div>
+                                </div>
+                            </div>
+                            
             
             <div class="site-description">
                 <div class="content-wrapper">
                     <div class="content-inner">
                         <article class="content-article">
-                            <h1>🎰 BT2New - Situs Bolatangkas Online Terpercaya Indonesia! 🎊 �</h1>
+                            <h1>🎰 BT2New - Situs Bolatangkas Online Terpercaya Indonesia! 🎊</h1>
                             
                             <div class="author-box">
                                 <div class="author-avatar">BT</div>
@@ -1058,51 +1170,43 @@
                                 </div>
                             </div>
                             
-                            <h2>Keunggulan BT2New</h2>
-                            <p>Sebagai platform bolatangkas online terpercaya, <strong>BT2New</strong> menghadirkan pengalaman bermain <a href="#" class="secondary-link">Bolatangkas</a> dengan fitur-fitur unggulan:</p>
-                            
-                            <ul class="feature-list">
-                                <li class="feature-item"><strong><a href="#" class="secondary-link">🎯 RTP Tinggi 98.5%</a></strong> - Peluang menang terbesar dengan transparansi penuh</li>
-                                <li class="feature-item"><strong><a href="#" class="secondary-link">🎰 Lucky Table System</a></strong> - Pilih dan ganti meja keberuntungan Anda sendiri</li>
-                                <li class="feature-item"><strong><a href="#" class="secondary-link">💰 Range Taruhan Fleksibel</a></strong> - Rp 1.000 - Rp 25.000 per hand</li>
-                                <li class="feature-item"><strong><a href="#" class="secondary-link">⚡ Proses Super Cepat</a></strong> - Deposit & withdraw hanya 1 menit tanpa potongan</li>
-                                <li class="feature-item"><strong><a href="#" class="secondary-link">📱 Multi Platform</a></strong> - Desktop, mobile browser & aplikasi iOS/Android</li>
-                                <li class="feature-item"><strong><a href="#" class="secondary-link">�️ Lisensi Resmi PAGCOR</a></strong> - Beroperasi legal dengan jaminan keamanan SSL 256-bit</li>
-                            </ul>
-                            
-                            <div class="trust-indicators">
-                                <h3 style="color: #28a745; margin: 0 0 15px 0;">🛡️ Jaminan Keamanan & Kepercayaan</h3>
-                                <div class="trust-grid">
-                                    <div class="trust-item">
-                                        <div class="trust-icon">✓</div>
-                                        <span><strong>Lisensi Gaming Resmi</strong> - Beroperasi legal sejak 2020</span>
+                            <h2>Testimoni Member BT2New</h2>
+                            <div class="testimonial-cards">
+                                <div class="testimonial-card">
+                                    <div class="testimonial-header">
+                                        <div class="testimonial-avatar">AL</div>
+                                        <div class="testimonial-info">
+                                            <div class="testimonial-name">Along</div>
+                                            <div class="testimonial-role">Member VIP since 2004</div>
+                                        </div>
                                     </div>
-                                    <div class="trust-item">
-                                        <div class="trust-icon">🔒</div>
-                                        <span><strong>SSL 256-bit Encryption</strong> - Data terlindungi penuh</span>
-                                    </div>
-                                    <div class="trust-item">
-                                        <div class="trust-icon">🏆</div>
-                                        <span><strong>Best Bolatangkas Site 2025</strong> - Situs tangkas terbaik</span>
-                                    </div>
-                                    <div class="trust-item">
-                                        <div class="trust-icon">💰</div>
-                                        <span><strong>RTP Diaudit Independen</strong> - Transparansi 100%</span>
+                                    <p class="testimonial-content">Sejak bergabung dengan BT2New, kemenangan Bolatangkas lebih sering datang. Lucky Table System benar-benar game changer! Bisa ganti meja sesuai feeling, dan withdraw diproses sangat cepat!</p>
+                                    <div class="testimonial-rating">
+                                        <span class="star">★</span>
+                                        <span class="star">★</span>
+                                        <span class="star">★</span>
+                                        <span class="star">★</span>
+                                        <span class="star">★</span>
                                     </div>
                                 </div>
-                            </div>
-                            
-                            <h2>Testimoni Member BT2New</h2>
-                            <div style="display: grid; gap: 15px; margin: 20px 0;">
-                                <blockquote class="testimonial">
-                                    <p>"Sejak bergabung dengan BT2New, kemenangan Bolatangkas lebih sering datang. Lucky Table System benar-benar game changer! Bisa ganti meja sesuai feeling, dan withdraw diproses sangat cepat!"</p>
-                                    <cite>- Andi K, Member VIP BT2New since 2023</cite>
-                                </blockquote>
                                 
-                                <blockquote class="testimonial" style="border-left: 3px solid #28a745;">
-                                    <p>"RTP 98.5% benar-benar terbukti! Dalam sebulan terakhir profit saya naik 380%. Customer service juga upgrade response time jadi under 30 detik. Fitur Bolatangkas makin smooth!"</p>
-                                    <cite>- Sarah L, VIP Gold Member - <em style="color: #999; font-size: 12px;">01 Agustus 2025</em></cite>
-                                </blockquote>
+                                <div class="testimonial-card">
+                                    <div class="testimonial-header">
+                                        <div class="testimonial-avatar">BD</div>
+                                        <div class="testimonial-info">
+                                            <div class="testimonial-name">Budi</div>
+                                            <div class="testimonial-role">VIP Gold Member</div>
+                                        </div>
+                                    </div>
+                                    <p class="testimonial-content">RTP 98.5% benar-benar terbukti! Dalam sebulan terakhir profit saya naik 380%. Customer service juga upgrade response time jadi under 30 detik. Fitur Bolatangkas makin smooth!</p>
+                                    <div class="testimonial-rating">
+                                        <span class="star">★</span>
+                                        <span class="star">★</span>
+                                        <span class="star">★</span>
+                                        <span class="star">★</span>
+                                        <span class="star">★</span>
+                                    </div>
+                                </div>
                             </div>
                             
                             <h2 id="panduan-bermain">Panduan Bermain Bolatangkas di BT2New</h2>
@@ -1217,11 +1321,11 @@
                                 <div class="contact-grid">
                                     <div class="contact-item">
                                         <div class="contact-icon">🏢</div>
-                                        <span><strong>Alamat Kantor:</strong><br>Jl. Sudirman No. 123, Gedung Menara Gaming Lt. 15<br>Jakarta Selatan 12190, Indonesia</span>
+                                        <span><strong>Alamat Kantor:</strong><br>10 Bayfront Ave, Singapore 018956<br>Singapore</span>
                                     </div>
                                     <div class="contact-item">
                                         <div class="contact-icon">📱</div>
-                                        <span><strong>Customer Service:</strong><br>+62 21 5555 0123 (24/7)</span>
+                                        <span><strong>Telephone / Whatsapp:</strong><br>+6281260081616 (24/7)</span>
                                     </div>
                                     <div class="contact-item">
                                         <div class="contact-icon">📧</div>
@@ -1233,11 +1337,11 @@
                                     </div>
                                     <div class="contact-item">
                                         <div class="contact-icon">🆔</div>
-                                        <span><strong>Nomor Izin:</strong><br>PAGCOR-2019-MGS-001234</span>
+                                        <span><strong>Nomor Izin:</strong><br>PAGCOR-2004-MGS-8888</span>
                                     </div>
                                     <div class="contact-item">
                                         <div class="contact-icon">🏛️</div>
-                                        <span><strong>Regulated By:</strong><br>Philippine Amusement Gaming Corp.</span>
+                                        <span><strong>Regulated By:</strong><br>Singapore Sands Group.</span>
                                     </div>
                                 </div>
                             </div>
