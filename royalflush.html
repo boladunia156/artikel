@@ -198,7 +198,8 @@
             transform: translateY(-5px) scale(1.05);
             border-color: #b39ddb;
         }
-        .contact-list li a i { width: 45px; height: 45px; margin-bottom: 0; margin-right: 8px; }
+        .contact-list li a i { width: 45px; height: 22px; margin-bottom: 0; margin-right: 8px; display: flex; align-items: center; justify-content: center; }
+        .contact-list li a i amp-img { object-fit: contain !important; }
         
         /* Tables - Mobile First */
         .content table { 
@@ -664,13 +665,14 @@
         }
         .fixed-footer amp-img { 
             width: 50px !important; 
-            height: 50px !important; 
+            height: 25px !important; 
             margin-bottom: 8px;
             border-radius: 10px;
             transition: all 0.3s ease;
             object-fit: contain !important;
             background: rgba(124, 77, 255, 0.1);
-            padding: 2px;
+            padding: 5px;
+            display: block !important;
         }
         .fixed-footer a:hover amp-img {
             transform: scale(1.1);
@@ -804,7 +806,8 @@
                 padding: 25px 30px;
                 font-size: 16px;
             }
-            .contact-list li a i { width: 50px; height: 50px; }
+            .contact-list li a i { width: 50px; height: 25px; }
+            .contact-list li a i amp-img { object-fit: contain !important; }
             
             .site-description h1 { font-size: 38px; }
             .site-description h2 { font-size: 32px; }
@@ -824,7 +827,7 @@
             
             .fixed-footer { position: relative; padding: 25px; }
             .fixed-footer a { font-size: 16px; }
-            .fixed-footer amp-img { width: 70px !important; height: 70px !important; object-fit: contain !important; }
+            .fixed-footer amp-img { width: 70px !important; height: 35px !important; object-fit: contain !important; padding: 8px !important; }
             
             .trust-grid { grid-template-columns: 1fr 1fr; }
             .contact-grid { grid-template-columns: 1fr 1fr; }
@@ -837,10 +840,10 @@
                 padding: 30px 35px;
                 font-size: 18px;
             }
-            .contact-list li a i { width: 60px; height: 60px; }
+            .contact-list li a i { width: 60px; height: 30px; }
             .site-description h1 { font-size: 42px; }
             .site-description h2 { font-size: 36px; }
-            .fixed-footer amp-img { width: 90px !important; height: 90px !important; object-fit: contain !important; }
+            .fixed-footer amp-img { width: 90px !important; height: 45px !important; object-fit: contain !important; padding: 10px !important; }
             
             .logo-container { 
                 padding: 45px 70px;
@@ -1075,21 +1078,23 @@
         <ul class="contact-list container">
             <li>
                 <a id="link_body_login" target="_blank" rel="nofollow noreferrer">
-                    <i><amp-img layout="responsive" height="80" width="80" src="https://d3k16hql3gpt9f.cloudfront.net/whitelabelImage/1681914545351_logo.png"></amp-img></i>
+                    <i><amp-img layout="fixed" height="22" width="45" src="https://d3k16hql3gpt9f.cloudfront.net/whitelabelImage/1681914545351_logo.png"></amp-img></i>
                     Login BT2New
                 </a>
             </li>
             <li>
                 <a id="link_body_register" target="_blank" rel="nofollow noreferrer">
-                    <i><amp-img layout="responsive" height="80" width="80" src="https://d3k16hql3gpt9f.cloudfront.net/whitelabelImage/1681914545351_logo.png"></amp-img></i>
+                    <i><amp-img layout="fixed" height="22" width="45" src="https://d3k16hql3gpt9f.cloudfront.net/whitelabelImage/1681914545351_logo.png"></amp-img></i>
                     Daftar BT2New
                 </a>
             </li>
         </ul>
         
         <div class="container">
-            
-            
+            <div class="site-description">
+                <div class="content-wrapper">
+                    <div class="content-inner">
+                        <article class="content-article">
                             <h2>Keunggulan BT2New</h2>
                             <p>Sebagai platform bolatangkas online terpercaya, <strong>BT2New</strong> menghadirkan pengalaman bermain <a href="#" class="secondary-link">Bolatangkas</a> dengan fitur-fitur unggulan:</p>
                             
@@ -1099,7 +1104,7 @@
                                 <li class="feature-item"><strong><a href="#" class="secondary-link">💰 Range Taruhan Fleksibel</a></strong> - Rp 1.000 - Rp 25.000 per hand</li>
                                 <li class="feature-item"><strong><a href="#" class="secondary-link">⚡ Proses Super Cepat</a></strong> - Deposit & withdraw hanya 1 menit tanpa potongan</li>
                                 <li class="feature-item"><strong><a href="#" class="secondary-link">📱 Multi Platform</a></strong> - Desktop, mobile browser & aplikasi iOS/Android</li>
-                                <li class="feature-item"><strong><a href="#" class="secondary-link">�️ Lisensi Resmi PAGCOR</a></strong> - Beroperasi legal dengan jaminan keamanan SSL 256-bit</li>
+                                <li class="feature-item"><strong><a href="#" class="secondary-link">🛡️ Lisensi Resmi PAGCOR</a></strong> - Beroperasi legal dengan jaminan keamanan SSL 256-bit</li>
                             </ul>
                             
                             <div class="trust-indicators">
@@ -1123,7 +1128,10 @@
                                     </div>
                                 </div>
                             </div>
-                            
+                        </article>
+                    </div>
+                </div>
+            </div>
             
             <div class="site-description">
                 <div class="content-wrapper">
@@ -1297,7 +1305,7 @@
                                 <div style="font-size: 12px; color: #999; margin-bottom: 10px;">*Strategi terupdate Agustus 2025 - Analisis 8,500+ hand terbaru</div>
                                 <p style="margin: 10px 0; font-size: 14px; line-height: 1.5;">
                                     <strong>Berdasarkan analisis 10,000+ hand Bolatangkas:</strong><br>
-                                    • <strong>Optimal Bet Range:</strong> Rp 1.000 - Rp 25.000 per hand untuk RTP maksimal<br>
+                                    • <strong>Optimal Bet Range:</strong> Mulai dari Rp 1.000 - Rp 4.000 per bet untuk RTP maksimal, lalu apabila sudah mengerti Bet Step Rule, mainkan di x2, x5<br>
                                     • <strong>Best Time to Play:</strong> 19:00 - 23:00 WIB (peak payout hours)<br>
                                     • <strong>Lucky Table Strategy:</strong> Ganti meja setiap 20-30 hand untuk mengoptimalkan keberuntungan<br>
                                     • <strong>Bankroll Management:</strong> Set batas maksimal 25% dari total deposit untuk session management<br>
@@ -1377,15 +1385,15 @@
     
     <div class="fixed-footer">
         <a id="link_footer_whatsapp" rel="nofollow noreferrer" target="_blank" style="text-align:center">
-            <amp-img layout="intrinsic" height="100" width="100" src="https://d3k16hql3gpt9f.cloudfront.net/whitelabelImage/1681914545351_logo.png"></amp-img>
+            <amp-img layout="fixed" height="25" width="50" src="https://d3k16hql3gpt9f.cloudfront.net/whitelabelImage/1681914545351_logo.png"></amp-img>
             Lucky Table
         </a>
         <a id="link_footer_daftar" rel="nofollow noreferrer" target="_blank" class="tada">
-            <amp-img class="center" layout="intrinsic" height="120" width="120" src="https://d3k16hql3gpt9f.cloudfront.net/whitelabelImage/1681914545351_logo.png"></amp-img>
+            <amp-img class="center" layout="fixed" height="25" width="50" src="https://d3k16hql3gpt9f.cloudfront.net/whitelabelImage/1681914545351_logo.png"></amp-img>
             Daftar BT2New
         </a>
         <a id="link_footer_lala" rel="nofollow noreferrer" target="_blank">
-            <amp-img layout="intrinsic" height="100" width="100" src="https://d3k16hql3gpt9f.cloudfront.net/whitelabelImage/1681914545351_logo.png"></amp-img>
+            <amp-img layout="fixed" height="25" width="50" src="https://d3k16hql3gpt9f.cloudfront.net/whitelabelImage/1681914545351_logo.png"></amp-img>
             Livechat BT2New
         </a>
     </div>
